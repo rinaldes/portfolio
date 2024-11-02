@@ -1,12 +1,7 @@
-import { Hero, About, Project, Contact } from "@/containers";
+import { redirect } from "next/navigation";
 
-const page = () => (
-  <>
-    <Hero />
-    <About />
-    <Project />
-    <Contact />
-  </>
-);
+const page = () => {
+  redirect("/duma");
+};
 
 export default page;
