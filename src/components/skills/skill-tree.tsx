@@ -145,12 +145,8 @@ export const SkillTree = ({ data }: { data: SkillNodeType }) => {
     }
 
     let currentOffset = 0;
-    const childPositions = children.flatMap((child, i) => {
-      const positions = calculateNodePositions(
-        child,
-        level + 1,
-        offset + currentOffset
-      );
+    const childPositions = children.flatMap((child) => {
+      const positions = calculateNodePositions(child, level + 1, offset + currentOffset);
       currentOffset += getLeafCount(child);
       return positions;
     });
@@ -175,8 +171,18 @@ export const SkillTree = ({ data }: { data: SkillNodeType }) => {
               exit={{ opacity: 0, x: -20 }}
               className="absolute p-4 rounded-lg bg-background/95 backdrop-blur border shadow-lg"
               style={{
-                left: `${(nodePositions.find((pos) => pos.node.id === (hoveredNode || autoHighlightNode)?.id)?.x ?? 0) + 50}px`,
-                top: `${(nodePositions.find((pos) => pos.node.id === (hoveredNode || autoHighlightNode)?.id)?.y ?? 0) - 30}px`,
+                left: `${
+                  (nodePositions.find(
+                    (pos) =>
+                      pos.node.id === (hoveredNode || autoHighlightNode)?.id
+                  )?.x ?? 0) + 50
+                }px`,
+                top: `${
+                  (nodePositions.find(
+                    (pos) =>
+                      pos.node.id === (hoveredNode || autoHighlightNode)?.id
+                  )?.y ?? 0) - 30
+                }px`,
                 borderColor: `${(hoveredNode || autoHighlightNode)?.color}35`,
                 maxWidth: "300px",
                 zIndex: 50,

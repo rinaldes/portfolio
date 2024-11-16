@@ -1,4 +1,3 @@
-import ContactInfo from "@/components/functional/Contact";
 import { Section } from "@/components/ui/section";
 
 const AboutMe = () => (

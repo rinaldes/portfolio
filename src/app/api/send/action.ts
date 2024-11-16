@@ -24,7 +24,7 @@ export async function sendEmail(formData: FormData) {
     });
 
     // Send email
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: process.env.SENDER_EMAIL as string,
       to: process.env.CONTACT_EMAIL as string,
       subject: `[Portfolio Contact] ${validatedFields.subject}`,

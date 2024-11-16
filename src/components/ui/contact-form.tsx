@@ -68,7 +68,7 @@ export const ContactForm = () => {
 
       // Create FormData object
       const formData = new FormData();
-      // Only send necessary fields (exclude honeypot and timestamp)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { username, timestamp, ...formFields } = data;
       Object.entries(formFields).forEach(([key, value]) => {
         formData.append(key, value);

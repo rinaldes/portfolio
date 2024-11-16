@@ -1,14 +1,10 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { useRouter } from 'next/navigation';
-import { useTheme } from 'next-themes';
+import * as React from "react";
+import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 import {
-  Calculator,
-  Calendar,
-  CreditCard,
   Settings,
-  Smile,
   User,
   Mail,
   Moon,
@@ -16,7 +12,7 @@ import {
   Github,
   Linkedin,
   FileText,
-} from 'lucide-react';
+} from "lucide-react";
 
 import {
   CommandDialog,
@@ -26,9 +22,8 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
-} from '@/components/ui/command';
-import { DialogTitle } from '@/components/ui/dialog';
+} from "@/components/ui/command";
+import { DialogTitle } from "@/components/ui/dialog";
 
 interface Section {
   id: string;
@@ -38,23 +33,23 @@ interface Section {
 
 const sections: Section[] = [
   {
-    id: 'about',
-    name: 'About',
+    id: "about",
+    name: "About",
     icon: <User className="mr-2 h-4 w-4" />,
   },
   {
-    id: 'projects',
-    name: 'Projects',
+    id: "projects",
+    name: "Projects",
     icon: <FileText className="mr-2 h-4 w-4" />,
   },
   {
-    id: 'skills',
-    name: 'Skills',
+    id: "skills",
+    name: "Skills",
     icon: <Settings className="mr-2 h-4 w-4" />,
   },
   {
-    id: 'contact',
-    name: 'Contact',
+    id: "contact",
+    name: "Contact",
     icon: <Mail className="mr-2 h-4 w-4" />,
   },
 ];
@@ -62,18 +57,18 @@ const sections: Section[] = [
 export function CommandMenu() {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
-  const { setTheme, theme } = useTheme();
+  const { setTheme } = useTheme();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
     };
 
-    document.addEventListener('keydown', down);
-    return () => document.removeEventListener('keydown', down);
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
   }, []);
 
   const runCommand = React.useCallback((command: () => void) => {
@@ -117,11 +112,11 @@ export function CommandMenu() {
             </CommandGroup>
             <CommandSeparator />
             <CommandGroup heading="Theme">
-              <CommandItem onSelect={() => runCommand(() => setTheme('light'))}>
+              <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
                 <Sun className="mr-2 h-4 w-4" />
                 Light
               </CommandItem>
-              <CommandItem onSelect={() => runCommand(() => setTheme('dark'))}>
+              <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
                 <Moon className="mr-2 h-4 w-4" />
                 Dark
               </CommandItem>
@@ -131,7 +126,7 @@ export function CommandMenu() {
               <CommandItem
                 onSelect={() => {
                   runCommand(() => {
-                    window.open('https://github.com/yourusername', '_blank');
+                    window.open("https://github.com/yourusername", "_blank");
                   });
                 }}
               >
@@ -141,7 +136,10 @@ export function CommandMenu() {
               <CommandItem
                 onSelect={() => {
                   runCommand(() => {
-                    window.open('https://linkedin.com/in/yourusername', '_blank');
+                    window.open(
+                      "https://linkedin.com/in/yourusername",
+                      "_blank"
+                    );
                   });
                 }}
               >
