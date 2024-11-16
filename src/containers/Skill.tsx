@@ -1,77 +1,26 @@
-import { Card } from "@/components/ui/card";
-import { LucideIcon } from "lucide-react";
-
-interface SkillCategory {
-  title: string;
-  skills: {
-    name: string;
-    icon?: LucideIcon;
-  }[];
-}
-
-const skillsData: SkillCategory[] = [
-  {
-    title: "Frontend Development",
-    skills: [
-      { name: "Next.js" },
-      { name: "React" },
-      { name: "TypeScript" },
-      { name: "JavaScript" },
-      { name: "HTML5" },
-      { name: "CSS3" },
-      { name: "Tailwind CSS" },
-    ],
-  },
-  {
-    title: "Backend Development",
-    skills: [
-      { name: "Java" },
-      { name: "Spring Boot" },
-      { name: "Node.js" },
-      { name: "RESTful APIs" },
-    ],
-  },
-  {
-    title: "Database",
-    skills: [{ name: "PostgreSQL" }, { name: "MySQL" }, { name: "MongoDB" }],
-  },
-  {
-    title: "Tools & Others",
-    skills: [
-      { name: "Git" },
-      { name: "GitHub" },
-      { name: "Docker" },
-      { name: "VS Code" },
-      { name: "IntelliJ IDEA" },
-      { name: "Postman" },
-    ],
-  },
-];
+import { SkillTree } from "@/components/skills/skill-tree";
+import { skillsData } from "@/data/skills";
+import { Section } from "@/components/ui/section";
 
 const Skill = () => (
-  <section className="py-12 px-4 sm:px-8 md:px-16">
-    <h2 className="text-2xl font-bold mb-8">Skills & Tools</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {skillsData.map((category) => (
-        <Card
-          key={category.title}
-          className="p-6 bg-neutral-800 border-neutral-700"
-        >
-          <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-          <div className="flex flex-wrap gap-2">
-            {category.skills.map((skill) => (
-              <span
-                key={skill.name}
-                className="px-3 py-1 bg-neutral-700 rounded-full text-sm"
-              >
-                {skill.name}
-              </span>
-            ))}
-          </div>
-        </Card>
-      ))}
+  <Section id="skills">
+    <div className="space-y-8">
+      <div className="space-y-4">
+        <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">
+          Skills & Expertise
+        </h2>
+        <p className="text-muted-foreground max-w-[600px]">
+          An interactive visualization of my technical skills and expertise.
+          Hover over each node to learn more about my experience and proficiency
+          in different areas.
+        </p>
+      </div>
+
+      <div className="relative">
+        <SkillTree data={skillsData} />
+      </div>
     </div>
-  </section>
+  </Section>
 );
 
 export default Skill;

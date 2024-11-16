@@ -1,0 +1,13 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rinal.dev/sitemap.xml
+
+# Disallow API routes
+Disallow: /api/
+
+# Additional rules
+Disallow: /private/
+Disallow: /admin/

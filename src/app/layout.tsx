@@ -1,20 +1,17 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import { ChildType } from "@/types";
 import { geistSans, geistMono } from "@/fonts";
 import Providers from "@/providers";
-
-export const metadata: Metadata = {
-  title: "Rinaldes Duma",
-  description: "Rinaldes Duma's portfolio",
-};
+import { Toaster } from "@/components/ui/toaster";
+export { metadata } from "./metadata";
 
 const RootLayout = ({ children }: ChildType) => (
   <html lang="en" suppressHydrationWarning>
     <body
-      className={`dark ${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground relative`}
     >
       <Providers>{children}</Providers>
+      <Toaster />
     </body>
   </html>
 );

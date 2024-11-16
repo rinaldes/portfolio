@@ -1,12 +1,11 @@
-import { Hero, About, Project, Skill } from "@/containers";
+import { NavItems } from "./nav-items";
+import { Section } from "./sections";
 
-const page = () => (
+const Page = () => (
   <>
-    <Hero />
-    <About />
-    <Project />
-    <Skill />
+    <NavItems />
+    <Section />
   </>
 );
 
-export default page;
+export default Page;
