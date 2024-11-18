@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/section";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => (
-  <Section id="home" containerClassName="flex items-center">
+  <Section id="home" containerClassName="flex items-center h-screen">
     <div className="space-y-8">
       <div className="space-y-4">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">

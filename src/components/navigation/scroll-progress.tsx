@@ -25,7 +25,7 @@ export const ScrollProgress = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-primary/20 z-50"
+      className="fixed top-0 left-0 right-0 h-3 bg-primary/20 z-50"
       style={{ transformOrigin: "0%" }}
     >
       <motion.div
