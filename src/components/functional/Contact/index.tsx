@@ -1,10 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
 import { contactInfo } from "@/data/contact";
-import {
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons";
 import Motion from "./Motion";
 import Link from "next/link";
 
