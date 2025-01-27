@@ -21,7 +21,7 @@ const navItems = [
 
 export const TopNav = () => (
   <motion.div
-    className="absolute top-0 right-0 p-6 z-50"
+    className="absolute top-0 right-0 p-6 z-50 hidden md:block"
     initial={{ opacity: 0, y: -20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}

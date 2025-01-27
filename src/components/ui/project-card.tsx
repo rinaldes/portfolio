@@ -34,7 +34,7 @@ export const ProjectCard = ({
     >
       <Card className="group h-full overflow-hidden border-neutral-700 transition-colors hover:border-neutral-600">
         {/* Image Container */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-48 overflow-hidden hidden">
           <Image
             src={imageUrl}
             alt={title}
@@ -84,6 +84,7 @@ export const ProjectCard = ({
           <motion.h3 className="text-xl font-semibold transition-colors group-hover:text-primary">
             {title}
           </motion.h3>
+          <br />
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <Badge
@@ -98,6 +99,36 @@ export const ProjectCard = ({
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground mb-4">{description}</p>
+          {github && (
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Button variant="outline" size="sm" asChild>
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black/50 hover:bg-black/70"
+                >
+                  <GitHubLogoIcon className="w-4 h-4 mr-2" />
+                  Code
+                </a>
+              </Button>
+            </motion.div>
+          )}
+          {liveUrl && (
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Button size="sm" asChild>
+                <a
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary hover:bg-primary/90"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Live Demo
+                </a>
+              </Button>
+            </motion.div>
+          )}
         </CardContent>
       </Card>
     </motion.div>

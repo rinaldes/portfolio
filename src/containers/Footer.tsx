@@ -29,7 +29,7 @@ const Footer = () => (
       ))}
     </div>
 
-    <p className="mt-12 text-sm text-muted-foreground">
+    <p className="mt-12 text-sm text-muted-foreground col-span-4">
       &copy; {new Date().getFullYear()} Rinaldes Duma. All rights reserved.
     </p>
   </footer>

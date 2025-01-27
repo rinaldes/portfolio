@@ -94,7 +94,7 @@ export const SideNav = () => {
 
   return (
     <motion.nav
-      className="fixed left-6 z-50 top-[28%]"
+      className="fixed left-6 z-50 top-[28%] hidden md:block"
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}

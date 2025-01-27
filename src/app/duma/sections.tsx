@@ -10,7 +10,7 @@ import {
 import { FadeIn, SlideIn } from "@/components/animations";
 
 export const Section = () => (
-  <>
+  <div className="px-8 lg:px-0">
     <FadeIn delay={0.5}>
       <Hero />
     </FadeIn>
@@ -23,11 +23,11 @@ export const Section = () => (
       <Project />
     </FadeIn>
 
-    <SlideIn direction="up" delay={0.5}>
+    <SlideIn direction="up" delay={0.5} className="hidden lg:block">
       <Skill />
     </SlideIn>
 
-    <SlideIn direction="left" delay={0.5}>
+    <SlideIn direction="left" delay={0.5} className="hidden md:block">
       <Experience />
     </SlideIn>
 
@@ -35,8 +35,8 @@ export const Section = () => (
       <Contact />
     </SlideIn>
 
-    <SlideIn direction="up" delay={0.5}>
+    <SlideIn direction="up" delay={0.5} className="hidden md:block">
       <Footer />
     </SlideIn>
-  </>
+  </div>
 );

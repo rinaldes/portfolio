@@ -51,7 +51,7 @@ const Hero = () => (
         </div>
 
         <FadeIn
-          className="lg:col-span-2 relative flex justify-end"
+          className="lg:col-span-2 relative justify-end hidden lg:flex"
           delay={0.2}
           duration={0.5}
         >
